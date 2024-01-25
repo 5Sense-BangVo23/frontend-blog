@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  blog_frontend:
+    build:
+      context: .
+    image: blog_frontend
+    container_name: blog_frontend
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    environment:
+      - APP_ENV=local
+      - APP_KEY=base64:0m3Z1A6DO82mMgbn0GkhZwRiTCLdyxDzDDbwgrqnSVo=
+    restart: unless-stopped
+    ports:
+      - "8222:8000"
+    networks:
+      - blog_network
+
+networks:
+  blog_network:
+    driver: bridge
