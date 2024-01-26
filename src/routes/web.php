@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +14,8 @@ use App\Http\Controllers\AuthenticationController;
 |
 */
 
-Route::get('/', function () {
-    return view('templates.admin.dashboard');
-});
-
 Route::get('/admin/login', [AuthenticationController::class, 'showLoginForm'])->name('login');
+Route::get('/admin/dashboard',[DashboardController::class,'index']);
+   
+
+

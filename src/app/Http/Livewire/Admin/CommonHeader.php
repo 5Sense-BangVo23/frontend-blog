@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class CommonHeader extends Component
 {
     public function render()
     {
-        return view('livewire.common-header');
+        return view('livewire.admin.common-header');
     }
 }

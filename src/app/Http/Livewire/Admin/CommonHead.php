@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use Illuminate\View\ComponentSlot;
 
 class CommonHead extends Component
-{
+{  
     public string $layout;
     protected ?ComponentSlot $title;
     protected ?ComponentSlot $head;
     protected ?ComponentSlot $meta;
-
 
     public function mount($layout, $title, $head, $meta = null)
     {
@@ -23,11 +22,14 @@ class CommonHead extends Component
 
     public function render()
     {
-        return view('livewire.common-head',array(
-            'layout' => $this->layout,
-            'title' => $this->title,
-            'head' => $this->head,
-            'meta' => $this->meta,
-        ));
+        return view(
+            'livewire.admin.common-head',
+            array(
+                'layout' => $this->layout,
+                'title' => $this->title,
+                'head' => $this->head,
+                'meta' => $this->meta,
+            ),
+        );
     }
 }

@@ -7,7 +7,7 @@ return [
 
     /* Site name */
 
-    'site_name' => 'Blog',
+    'site_name' => 'Blog Dashboard',
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Laravel Blog'),
 
     /*
     |--------------------------------------------------------------------------

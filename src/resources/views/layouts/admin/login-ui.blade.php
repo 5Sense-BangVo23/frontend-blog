@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
     @livewire('common-head',[
         'layout'=>'app',
         'title' => $title ?? null,
@@ -11,7 +9,6 @@
 
 <body>
     {{ $slot }}
-    
     @livewireScripts
 </body>
 </html>

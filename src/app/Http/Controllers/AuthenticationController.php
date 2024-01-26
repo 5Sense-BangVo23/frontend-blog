@@ -9,7 +9,7 @@ class AuthenticationController extends Controller
 {
     public function showLoginForm()
     {
-        return view('Authentication.admin.login');
+        return view('authentication.admin.login');
     }
 
     public function showSpecificView()
