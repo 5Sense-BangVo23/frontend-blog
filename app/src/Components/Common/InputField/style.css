@@ -1,0 +1,45 @@
+/* InputField/style.css */
+.input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: auto;
+}
+
+.input-field {
+  padding: 12px;
+  padding-left: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #8a2be2;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #373738;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #fff; /* Default background color */
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #4b0082;
+  box-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
+}
+
+/* Dark mode styles */
+.dark-mode .input-field {
+  background-color: #222;
+  color: #fff;
+  border-color: #555;
+}
+
+/* Custom class styles */
+.custom-class .input-field {
+  /* Your custom styles here */
+}
