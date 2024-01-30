@@ -1,20 +1,22 @@
-/* TimeBar/style.css */
-
 .time-bar-container {
   position: relative;
-  width: 100%;
-  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 500px;
+  height: 40px;
   background-color: #f0f0f0;
-  margin-top: 20px;
   overflow: hidden;
   border-radius: 10px;
 }
 
 .time-bar {
   height: 100%;
-  background-color: #52be5f; /* Adjust the color as needed */
+  background-color: #52be5f;
   transition: width 1s ease; /* Adjust the transition duration as needed */
   border-radius: 10px;
+  color: #fbfbfb;
 }
 
 .login-message {
@@ -24,16 +26,8 @@
   transform: translate(-50%, -50%);
   font-size: 24px; /* Increased font size */
   font-weight: bold;
-  color: #e74c3c; /* Red color for contrast */
+  color: #fbfbfb;/* Red color for contrast */
   opacity: 0;
-  transition: opacity 0.5s ease; /* Faster transition for hover effect */
+  transition: opacity 0.5s ease; 
 }
 
-.time-bar-container:hover .login-message {
-  opacity: 1;
-  color: #27ae60; /* Change color on hover */
-}
-
-.hidden {
-  display: none;
-}

@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../Dashboard/style.css";
+import { TimeBar } from "../../Components/Common/TimeBar/TimeBar";
 
 export const Dashboard = () => {
   const [timeLeft, setTimeLeft] = useState(60);
   const [progress, setProgress] = useState(100);
   const [loginMessageVisible, setLoginMessageVisible] = useState(true);
   const [intervalActive, setIntervalActive] = useState(true);
+  const [timeBarContainerVisible, setTimeBarContainerVisible] = useState(true);
 
   const intervalRef = useRef(null);
 
@@ -13,17 +15,25 @@ export const Dashboard = () => {
     intervalRef.current = setInterval(() => {
       setTimeLeft((prevTime) => {
         const newTime = prevTime - 1;
-        const newProgress = Math.max((60 - newTime) / 60 * 100, 0);
-        setProgress(newProgress);
+        const newProgress = newTime > 0 ? Math.max((60 - newTime) / 60 * 100, 0) : 0; 
   
-        if (newTime === 0) {
-          clearInterval(intervalRef.current);
-          setIntervalActive(false); // Set intervalActive to false when the interval completes
-          setLoginMessageVisible(false);
-        }
+        setProgress(newProgress);
+        setLoginMessageVisible(newTime > 0);
+        setIntervalActive(newTime > 0);
+        setTimeBarContainerVisible(newTime > 0);
       });
+
+      console.log("Interval running");
+      console.log("timeLeft", timeLeft);
+      console.log("progress", progress);
+      console.log("loginMessageVisible", loginMessageVisible);
+      console.log("intervalActive", intervalActive);
+      console.log("intervalRef", intervalRef);
+      console.log("intervalRef.current", intervalRef.current);
     }, 1000);
+    console.log("Interval started");
   };
+  
 
   useEffect(() => {
     startInterval();
@@ -33,15 +43,19 @@ export const Dashboard = () => {
     };
   }, []);
 
+  const handleAnimationEnd = () => {
+    setIntervalActive(false);
+  };
+
   return (
     <div className="dashboard-container">
       {intervalActive && (
-        <div className={`time-bar-container`}>
-          {loginMessageVisible && (
-            <div className="login-message">Login Successfully!</div>
-          )}
-          <div className="time-bar" style={{ width: `${progress}%` }}></div>
-        </div>
+        <TimeBar
+          progress={progress}
+          loginMessageVisible={loginMessageVisible}
+          onAnimationEnd={handleAnimationEnd}
+          showTimeBarContainer={timeBarContainerVisible}
+        />
       )}
       <h2>Welcome to the Dashboard</h2>
     </div>

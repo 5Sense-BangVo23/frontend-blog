@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import LoginForm from "../FormLogin";
 import Loader from "./Loader";
-import "./LoginContainer.css"; // Make sure to import the corresponding CSS file
+import "./LoginContainer.css";
 
 import email_icon from "../Assets/email.png";
 import password_icon from "../Assets/password.png";
@@ -15,12 +15,11 @@ export const LoginContainer = () => {
   const handleLoginSuccess = () => {
     setLogged(true);
     setTransitioning(false);
-    // Redirect to the dashboard or perform any other action upon successful login
+   
   };
 
   const handleLoginClick = () => {
     setTransitioning(true);
-    // Perform any other actions before initiating login
   };
 
   return (

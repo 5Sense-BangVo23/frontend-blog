@@ -13,12 +13,12 @@ import { ButtonLogin } from "../Common/ButtonLogin/ButtonLogin";
 export const FormLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false); // Thêm state để theo dõi trạng thái của Loader
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
-      setLoading(true); // Bắt đầu hiển thị Loader khi bắt đầu đăng nhập
+      setLoading(true); 
 
       const loginRequest = {
         email,
@@ -31,7 +31,7 @@ export const FormLogin = () => {
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
-      setLoading(false); // Dừng hiển thị Loader khi quá trình đăng nhập kết thúc (thành công hoặc thất bại)
+      setLoading(false); 
     }
   };
 
@@ -47,7 +47,7 @@ export const FormLogin = () => {
       value={email}
       onChange={setEmail}
       icon={email_icon}
-      className="custom-input" // Apply custom class here
+      className="custom-input" 
     />
     <InputField
       type="password"
@@ -55,7 +55,7 @@ export const FormLogin = () => {
       value={password}
       onChange={setPassword}
       icon={password_icon}
-      className="custom-input" // Apply custom class here
+      className="custom-input" 
     />
     <ButtonLogin onClick={handleLogin} loading={loading} />
     
