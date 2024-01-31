@@ -1,39 +1,26 @@
-/* TimeBar/style.css */
-
-.time-bar-container {
-  position: relative;
-  width: 100%;
-  height: 20px;
-  background-color: #f0f0f0;
-  margin-top: 20px;
-  overflow: hidden;
-  border-radius: 10px;
+/* Dashboard.css */
+.dashboard-container {
+  display: flex;
+  height: 100vh; /* Chiều cao 100% của viewport */
 }
 
-.time-bar {
-  height: 100%;
-  background-color: #52be5f; /* Adjust the color as needed */
-  transition: width 1s ease; /* Adjust the transition duration as needed */
-  border-radius: 10px;
+.dashboard-header {
+  flex: 0 0 70%; /* Header chiếm 70% chiều rộng, không co giãn */
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
 
-.login-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px; /* Increased font size */
-  font-weight: bold;
-  color: #e74c3c; /* Red color for contrast */
-  opacity: 0;
-  transition: opacity 0.5s ease; /* Faster transition for hover effect */
+.dashboard-sidebar {
+  flex: 1; /* Sidebar chiếm phần còn lại */
+  background-color: #f4f4f4;
+  padding: 20px;
+  height: 100%; /* Chiều cao 100% của dashboard-container */
 }
 
-.time-bar-container:hover .login-message {
-  opacity: 1;
-  color: #27ae60; /* Change color on hover */
+.dashboard-content {
+  flex: 7; /* Content chiếm 70% chiều rộng */
+  padding: 20px;
 }
 
-.hidden {
-  display: none;
-}

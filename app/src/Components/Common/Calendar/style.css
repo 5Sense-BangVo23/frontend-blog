@@ -1,0 +1,38 @@
+/* style.css */
+
+.calendar-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar-title {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .current-date {
+    font-size: 16px;
+    color: #555;
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+  
+  /* Styles for a cleaner look on smaller screens */
+  @media only screen and (max-width: 600px) {
+    .calendar-title {
+      font-size: 24px;
+    }
+  
+    .current-date {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  }
+  
+  /* Add styles for the calendar content or other elements as needed */
+  

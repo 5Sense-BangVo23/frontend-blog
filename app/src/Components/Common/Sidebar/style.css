@@ -1,0 +1,53 @@
+/* style.css */
+
+aside {
+  height: 100vh;
+  border-radius: 5px;
+  margin-top: -15px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #767a7e;
+}
+
+.sidebar-profile {
+  margin-bottom: 10px;
+  border-bottom: solid 2px #b6b6b6;
+}
+
+.dashboard-menu,
+.logout-menu {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-menu li,
+.logout-menu li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.logout-menu {
+  margin-top: auto; /* Set margin-top to auto for bottom positioning */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  aside {
+    width: 100%;
+    height: auto;
+    margin-top: 0; /* Reset margin-top for smaller screens */
+  }
+}

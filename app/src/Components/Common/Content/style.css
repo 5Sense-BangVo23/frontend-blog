@@ -1,0 +1,11 @@
+/* Content.css */
+main {
+    padding: 15px;
+    min-width:100%;
+}
+  
+p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  

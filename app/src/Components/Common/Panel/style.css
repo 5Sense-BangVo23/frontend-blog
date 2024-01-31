@@ -1,0 +1,63 @@
+/* style.css */
+
+/* ... Your existing styles ... */
+
+.panel-container {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .panel-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .panel-content {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .panel-child {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  /* Styling for dynamically rendered panelChild */
+  .panel-child > * {
+    /* Apply styles to direct children of panel-child */
+    color: #007BFF; /* Blue color for text */
+    font-size: 18px;
+    /* Add other styles as needed */
+  }
+  
+  /* Add other styles as needed */
+  .panel-children-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .panel-child {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .panel-position-1 {
+    order: 1;
+  }
+  
+  .panel-position-2 {
+    order: 2;
+  }
+  
+  .panel-position-3 {
+    order: 3;
+  }

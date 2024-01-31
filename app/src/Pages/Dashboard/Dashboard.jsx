@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../Dashboard/style.css";
 import { TimeBar } from "../../Components/Common/TimeBar/TimeBar";
+import { DashboardLayout } from "../../Components/Layouts/DashboardLayout";
 
 export const Dashboard = () => {
   const [timeLeft, setTimeLeft] = useState(60);
@@ -48,16 +49,21 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
-      {intervalActive && (
-        <TimeBar
-          progress={progress}
-          loginMessageVisible={loginMessageVisible}
-          onAnimationEnd={handleAnimationEnd}
-          showTimeBarContainer={timeBarContainerVisible}
-        />
-      )}
-      <h2>Welcome to the Dashboard</h2>
+    <div>
+        <DashboardLayout />
+          <div className="dashboard-container">
+            
+          {intervalActive && (
+            <TimeBar
+              progress={progress}
+              loginMessageVisible={loginMessageVisible}
+              onAnimationEnd={handleAnimationEnd}
+              showTimeBarContainer={timeBarContainerVisible}
+            />
+          )}
+        
+        </div>
     </div>
   );
+
 };
