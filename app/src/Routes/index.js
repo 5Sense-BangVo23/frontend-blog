@@ -3,8 +3,8 @@ import { AppLayout } from "../Components/Layouts/AppLayout";
 import { LoginPage } from "../Pages/Auth/LoginPage";
 import { Dashboard } from "../Pages/Dashboard/Dashboard";
 import { DashboardLayout } from "../Components/Layouts/DashboardLayout";
-import { Analytics } from "../Pages/Analytics/Analytics";
 import { Settings } from "../Pages/Settings/Settings";
+import { AuthorManager } from "../Pages/AuthorManager/AuthorManager";
 
 
 // Truncated for brevity
@@ -26,8 +26,8 @@ export const router = createBrowserRouter([
                         element: <Dashboard />
                     },
                     {
-                        path: "analytics",
-                        element: <Analytics />
+                        path: "Authors Management",
+                        element: <AuthorManager />
                     },
                     {
                         path: "settings",
