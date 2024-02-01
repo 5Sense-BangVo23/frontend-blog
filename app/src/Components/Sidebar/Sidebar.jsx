@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Sidebar/style.css'
-import { UserProfile } from '../../UserProfile/UserProfile'
-import { ButtonLogout } from '../ButtonLogout/ButtonLogout';
+import { ButtonLogout } from '../Common/ButtonLogout/ButtonLogout';
+import { UserProfile } from '../UserProfile/UserProfile';
 export const Sidebar = () => {
 
     const userEmail = "john.doe@example.com";

@@ -1,8 +1,8 @@
 import React from 'react'
 import '../Layouts/style.css';
-import { Sidebar } from '../Common/Sidebar/Sidebar';
-import { Header } from '../Common/Header/Header';
 import { Content } from '../Common/Content/Content';
+import { Sidebar } from '../Sidebar/Sidebar';
+import { Header } from '../Header/Header';
 
 export const DashboardLayout = () => {
 
