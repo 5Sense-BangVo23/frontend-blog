@@ -2,6 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import "../Dashboard/style.css";
 import { TimeBar } from "../../Components/Common/TimeBar/TimeBar";
 import { DashboardLayout } from "../../Components/Layouts/DashboardLayout";
+import Cookies from 'js-cookie';
+import { useAuth } from '../../Components/Provider/AuthProvider/AuthProvider';
+import { useNavigate } from "react-router-dom";
 
 export const Dashboard = () => {
   const [timeLeft, setTimeLeft] = useState(60);
@@ -9,7 +12,7 @@ export const Dashboard = () => {
   const [loginMessageVisible, setLoginMessageVisible] = useState(true);
   const [intervalActive, setIntervalActive] = useState(true);
   const [timeBarContainerVisible, setTimeBarContainerVisible] = useState(true);
-
+  const navigate = useNavigate();
   const intervalRef = useRef(null);
 
   const startInterval = () => {
@@ -36,13 +39,6 @@ export const Dashboard = () => {
   };
   
 
-  useEffect(() => {
-    startInterval();
-
-    return () => {
-      clearInterval(intervalRef.current);
-    };
-  }, []);
 
   const handleAnimationEnd = () => {
     setIntervalActive(false);
@@ -50,20 +46,17 @@ export const Dashboard = () => {
 
   return (
     <div>
-        <DashboardLayout />
-          <div className="dashboard-container">
-            
-          {intervalActive && (
-            <TimeBar
-              progress={progress}
-              loginMessageVisible={loginMessageVisible}
-              onAnimationEnd={handleAnimationEnd}
-              showTimeBarContainer={timeBarContainerVisible}
-            />
-          )}
-        
-        </div>
+      <DashboardLayout />
+      <div className="dashboard-container">
+        {intervalActive && (
+          <TimeBar
+            progress={progress}
+            loginMessageVisible={loginMessageVisible}
+            onAnimationEnd={handleAnimationEnd}
+            showTimeBarContainer={timeBarContainerVisible}
+          />
+        )}
+      </div>
     </div>
   );
-
 };

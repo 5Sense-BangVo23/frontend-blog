@@ -20,16 +20,22 @@ export const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: "dashboard", // Removed the leading slash to make it relative
+        path: "", 
         element: <DashboardLayout />,
-      },
-      {
-        path: "authors", // Removed the leading slash to make it relative
-        element: <AuthorManager />,
-      },
-      {
-        path: "settings", // Removed the leading slash to make it relative
-        element: <Settings />,
+        children:[
+          {
+            path: "dashboard", // Removed the leading slash to make it relative
+            element: <Dashboard />,
+          },
+          {
+            path: "authors", // Removed the leading slash to make it relative
+            element: <AuthorManager />,
+          },
+          {
+            path: "settings", // Removed the leading slash to make it relative
+            element: <Settings />,
+          },
+        ]
       },
     ],
   },
