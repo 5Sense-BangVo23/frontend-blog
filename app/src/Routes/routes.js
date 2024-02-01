@@ -12,26 +12,24 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path: "", // Empty path for the default child
+        index: true, // Set as index route
         element: <LoginPage />,
       },
       {
-        path: "dashboard",
+        path: "login", // Removed the leading slash to make it relative
+        element: <LoginPage />,
+      },
+      {
+        path: "dashboard", // Removed the leading slash to make it relative
         element: <DashboardLayout />,
-        children: [
-          {
-            index: true, // Index route for the default child of "dashboard"
-            element: <Dashboard />,
-          },
-          {
-            path: "authors",
-            element: <AuthorManager />,
-          },
-          {
-            path: "settings",
-            element: <Settings />,
-          },
-        ],
+      },
+      {
+        path: "authors", // Removed the leading slash to make it relative
+        element: <AuthorManager />,
+      },
+      {
+        path: "settings", // Removed the leading slash to make it relative
+        element: <Settings />,
       },
     ],
   },
